@@ -1,0 +1,176 @@
+.expense-modal {
+  width: min(560px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow-y: auto;
+
+  border: 1px solid #78bcf5;
+  border-radius: 18px;
+  background: white;
+  color: #123f70;
+  box-shadow: 0 20px 70px rgb(15 55 100 / 20%);
+}
+
+.expense-modal::backdrop {
+  background: rgb(20 55 90 / 35%);
+}
+
+.expense-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 24px 12px;
+}
+
+.expense-modal-header h2 {
+  margin: 0;
+  color: #0752a7;
+  font-size: clamp(26px, 5vw, 34px);
+}
+
+.expense-modal-header p {
+  margin: 8px 0 0;
+  color: #526c88;
+  line-height: 1.5;
+}
+
+.expense-modal-close {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #526c88;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.expense-modal-fields {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+  margin: 0;
+  padding: 12px 24px 24px;
+  border: 0;
+}
+
+.expense-modal-fields label {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  font-weight: bold;
+}
+
+.expense-modal-fields input,
+.expense-modal-fields select,
+.expense-modal-fields textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #bfd6ee;
+  border-radius: 8px;
+  background: white;
+  color: #123f70;
+  font: inherit;
+  font-weight: normal;
+}
+
+.expense-modal-fields input[readonly] {
+  background: #eef7ff;
+}
+
+.expense-modal-fields textarea {
+  resize: vertical;
+}
+
+.expense-modal-help {
+  margin: 0;
+  color: #526c88;
+  font-size: 14px;
+}
+
+.expense-receipt-preview {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.expense-receipt-preview img {
+  display: block;
+  max-width: 100%;
+  max-height: 220px;
+  margin-inline: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.expense-receipt-preview span {
+  overflow-wrap: anywhere;
+}
+
+.expense-receipt-preview button {
+  justify-self: start;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: #0752a7;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.expense-modal-error {
+  margin: 0 24px 20px;
+  color: #a12626;
+}
+
+.expense-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #dce9f6;
+}
+
+.expense-modal-footer button {
+  min-height: 44px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.expense-cancel {
+  background: #edf6ff;
+  color: #0752a7;
+}
+
+.expense-save {
+  background: #0878f9;
+  color: white;
+}
+
+.expense-modal button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.expense-modal :focus-visible {
+  outline: 3px solid #0752a7;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .expense-modal-header,
+  .expense-modal-fields,
+  .expense-modal-footer {
+    padding-inline: 16px;
+  }
+
+  .expense-modal-footer button {
+    flex: 1;
+  }
+}
